@@ -28,12 +28,17 @@ const Band = styled.div`
     color: blue;
     border-bottom: 3px solid;
   }
-  img{
+  div{
     display: block;
     width: auto;
     height: auto;
     max-width:300px;
     max-height:150px;
+    background-color: black;
+    img{
+      max-width:300px;
+      max-height:150px;
+    }
   }
 `
 
@@ -44,7 +49,9 @@ const ArtistList = (props) => {
         props.artists.map((artist, index) => {
           return (
             <Band key={index}>
-              <img src={artist.photo_url} alt="" />
+              <div>
+                <img src={artist.photo_url} alt="" />
+              </div>
               <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
             </Band>
           )
