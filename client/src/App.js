@@ -25,10 +25,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <div>
-            <h1>Tunr</h1>
-            <Navbar />
-          </div>
+          <Navbar />
           <Switch>
             <Route exact path="/" render={ArtistListComponent} />
             <Route path="/artists/:artistId" component={Artist} />
